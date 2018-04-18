@@ -1,0 +1,4 @@
+firstName,lastName,phoneNumber,city,street,flatNumber
+Szymon,Nowak,123456789,Poznan,swMarcin,13
+Jan,Kowalski,234567891,Poznan,Katowicka,25
+Anna,Wisniewska,345678912,Warszawa,Marszalkowska,12

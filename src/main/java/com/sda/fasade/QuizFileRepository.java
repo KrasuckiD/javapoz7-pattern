@@ -9,30 +9,30 @@ import java.util.Scanner;
 
 public class QuizFileRepository implements QuizRepository {
 
-    private String patch;
-    public QuizFileRepository(String patch) {
-        this.patch = patch;
+    private String path;
+
+    public QuizFileRepository(String path) {
+        this.path = path;
     }
 
-    public List<QuizQuestion> readAll (String patch) throws FileNotFoundException {
-        File file = new File(patch);
+    public List<QuizQuestion> readAll() throws FileNotFoundException {
+        File file = new File(path);
         Scanner scanner = new Scanner(file);
         List<QuizQuestion> questions = new ArrayList<>();
-        while (scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
+            //pytanie
             String question = scanner.nextLine();
 
+            //odpowiedzi
             List<String> possibleAnswers = Arrays.asList(scanner.nextLine(),
                     scanner.nextLine(), scanner.nextLine(), scanner.nextLine());
+
+            //odpowiedz
             char answer = scanner.nextLine().charAt(0);
 
             QuizQuestion quizQuestion = new QuizQuestion(question, possibleAnswers, answer);
             questions.add(quizQuestion);
         }
         return questions;
-    }
-
-    @Override
-    public List<QuizQuestion> readAll() {
-        return null;
     }
 }

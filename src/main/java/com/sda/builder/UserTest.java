@@ -8,6 +8,7 @@ public class UserTest {
                 secondName("Nowak").birthDay("1234").phoneNumber("123456789").build();
 
         Arrays.asList(User.builder().firstName("Adam").secondName("Kowalski").build());
+
 new UserWithLombok.UserWithLombokBuilder().firstName("Szymon").secondName("Nowak").build();
     }
 }
